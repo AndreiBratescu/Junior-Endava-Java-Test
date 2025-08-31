@@ -2,6 +2,7 @@ package com.example.carins.web;
 
 import com.example.carins.model.Car;
 import com.example.carins.model.Claim;
+import com.example.carins.model.HistoryEvent;
 import com.example.carins.service.CarService;
 import com.example.carins.web.dto.CarDto;
 import com.example.carins.web.dto.ClaimDto;
@@ -67,6 +68,17 @@ public class CarController {
 
         return ResponseEntity.created(URI.create("/api/cars/" + carId + "/claims/" + claim.getId()))
                 .body(claim);
+    }
+
+    @GetMapping("/cars/{carId}/history")
+    public ResponseEntity<List<HistoryEvent>> getCarHistory(@PathVariable Long carId) {
+        List<HistoryEvent> history = service.getCarHistory(Math.toIntExact(carId));
+
+        if (history.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(history);
     }
 
     private CarDto toDto(Car c) {

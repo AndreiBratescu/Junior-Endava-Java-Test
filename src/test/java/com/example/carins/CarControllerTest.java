@@ -44,7 +44,7 @@ class CarControllerTest {
     @Test
     void testIsInsuranceValid_InvalidDateFormat() {
         Long carId = 1L;
-        String date = "2025-30-08"; // Invalid format
+        String date = "2025-30-08";
 
         when(carService.listCars().get(Math.toIntExact(carId))).thenReturn(true);
 
@@ -57,7 +57,7 @@ class CarControllerTest {
     @Test
     void testIsInsuranceValid_DateOutOfRange() {
         Long carId = 1L;
-        String date = "1920-08-30"; // Date out of range
+        String date = "1920-08-30";
 
         when(carService.listCars().get(carId)).thenReturn(true);
 

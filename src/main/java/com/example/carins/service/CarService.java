@@ -51,7 +51,6 @@ public class CarService {
             return List.of();
         }
 
-        // Example history data
         List<HistoryEvent> history = List.of(
                 // Claims
                 new HistoryEvent("Claim", LocalDate.of(2025, 8, 30), "Accident on highway, damage to front bumper."),
@@ -60,7 +59,7 @@ public class CarService {
                 // Ownership Change
                 new HistoryEvent("Ownership Change", LocalDate.of(2021, 3, 15), "Sold to new owner."),
 
-                // More events can be added here
+                // Other Events
                 new HistoryEvent("Insurance Update", LocalDate.of(2024, 2, 1), "Insurance renewed for 1 year.")
         );
 

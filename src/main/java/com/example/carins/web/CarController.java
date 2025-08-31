@@ -36,7 +36,7 @@ public class CarController {
             return ResponseEntity.notFound().build();
         }
 
-        // Validate date format (ISO YYYY-MM-DD)
+        // Validate date format
         LocalDate parsedDate;
         try {
             parsedDate = LocalDate.parse(date);
